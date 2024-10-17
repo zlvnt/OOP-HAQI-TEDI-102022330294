@@ -1,0 +1,58 @@
+Inisialisasi variabel:
+saldoku = 2000000
+
+Print "Selamat datang di Bank KOM"
+Masukkan Nama dan simpan dalam nama
+Masukkan NIM dan simpan dalam nim
+Masukkan No. Rekening dan simpan dalam no_rekening
+
+Selama True:
+    Masukkan PIN (6 digit akhir dari NIM) dan simpan dalam p
+    Jika p sama dengan nim[-6:]:
+        Print "PIN BENAR. Selamat datang", nama
+        Berhenti
+    Lainnya:
+        Print "PIN yang anda masukkan salah. Silakan coba lagi."
+
+Selama True:
+    Print "Menu utama:"
+    Print "1. Cek Saldo"
+    Print "2. Tarik Uang"
+    Print "3. Setor Uang"
+    Print "4. Keluar"
+    Masukkan menu (1/2/3/4) dan simpan dalam opsi
+
+    Jika opsi sama dengan "1":
+        Print "Informasi Nasabah:"
+        Print "NIM: ", nim
+        Print "Nama: ", nama
+        Print "No. Rekening: ", no_rekening
+        Print "Saldo: Rp", saldoku
+
+    Jika opsi sama dengan "2":
+        Print "Informasi Nasabah:"
+        Print "NIM: ", nim
+        Print "Nama: ", nama
+        Print "No. Rekening: ", no_rekening
+        Masukkan nominal yang akan ditarik dan simpan dalam nominal
+        Jika nominal > saldoku:
+            Print "Saldo tidak mencukupi."
+        Lainnya:
+            saldoku -= nominal
+            Print "Saldo akhir: Rp", saldoku
+
+    Jika opsi sama dengan "3":
+        Print "Informasi Nasabah:"
+        Print "NIM: ", nim
+        Print "Nama: ", nama
+        Print "No. Rekening: ", no_rekening
+        Masukkan nominal yang akan disetor dan simpan dalam nominal
+        saldoku += nominal
+        Print "Saldo akhir: Rp", saldoku
+
+    Jika opsi sama dengan "4":
+        Print "Terima kasih telah menggunakan Bank KOM"
+        Berhenti
+
+    Lainnya:
+        Print "Pilihan tidak tersedia, Silakan coba lagi."
