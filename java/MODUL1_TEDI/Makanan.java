@@ -21,5 +21,5 @@ public class Makanan {
     public double getharga(){
         return harga;
     }
-
+    
 }
