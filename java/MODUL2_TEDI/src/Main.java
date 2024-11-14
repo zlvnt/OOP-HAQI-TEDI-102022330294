@@ -7,7 +7,7 @@ public class Main {
         komputer.Informasi();
 
         // To do: Buatlah sebuah Objek baru dari class KomputerVIP 
-        KomputerVIP komputerVIP = new KomputerVIP(10, "Warnet Gaming Z", 10000, false);
+        KomputerVIP komputerVIP = new KomputerVIP(10, "Warnet Gaming Z", 10000, true);
         // To do: Panggillah Method Informasi dari class KomputerVIP
         komputerVIP.Informasi();
         // To do: Panggillah Method Login
@@ -22,7 +22,7 @@ public class Main {
 
 
         // To do: Buatlah sebuah Objek baru dari class KomputerPremium
-        KomputerPremium komputerPremium = new KomputerPremium(25, "Warnet Gaming Z", 20000, false);
+        KomputerPremium komputerPremium = new KomputerPremium(25, "Warnet Gaming Z", 20000, true);
 
         // To do: Panggillah Method Informasi dari class KomputerPremium
         komputerPremium.Informasi();
