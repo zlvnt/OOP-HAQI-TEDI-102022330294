@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": [
+        "java/tubes/showroom kendaraan/src",
+        "java/Sistem Manajemen Buku/Sistem Manajemen Buku",
+        "java/Sistem Manajemen Buku/com/lgcns/mission/book/test"
+    ],
+    "java.project.referencedLibraries": [],
+    "java.debug.settings.onBuildFailureProceed": true
+}
