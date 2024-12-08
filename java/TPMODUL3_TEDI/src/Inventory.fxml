@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="InventoryController" spacing="10" alignment="CENTER" prefWidth="600" prefHeight="400">
+    <TableView fx:id="albumTable" prefHeight="200">
+        <columns>
+            <TableColumn text="Album Name" fx:id="albumNameColumn" prefWidth="150" />
+            <TableColumn text="Artist" fx:id="artistColumn" prefWidth="150" />
+            <TableColumn text="Total" fx:id="totalColumn" prefWidth="100" />
+            <TableColumn text="Available" fx:id="availableColumn" prefWidth="100" />
+            <TableColumn text="Rented" fx:id="rentedColumn" prefWidth="100" />
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER">
+        <VBox spacing="5">
+            <Label text="Nama Album:" />
+            <TextField fx:id="albumNameField" promptText="Masukkan nama album" />
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Artist:" />
+            <TextField fx:id="artistField" promptText="Masukkan nama aetis" />
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Total:" />
+            <TextField fx:id="totalField" promptText="masukkan jumlah total" />
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Available:" />
+            <TextField fx:id="availableField" promptText="Masukkan jumlah tersedia" />
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Add" fx:id="addButton" onAction="#handleAdd" />
+        <Button text="Delete" fx:id="deleteButton" onAction="#handleDelete" />
+        <Button text="Update" fx:id="updateButton" onAction="#handleUpdate" />
+    </HBox>
+</VBox>
