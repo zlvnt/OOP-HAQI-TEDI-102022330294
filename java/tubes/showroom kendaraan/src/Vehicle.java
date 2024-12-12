@@ -12,7 +12,7 @@ public class Vehicle {
         this.stockQuantity = stockQuantity;
     }
 
-    // Getter and Setter
+    // Getter and Setter    
     public String getBrand() {
         return brand;
     }
