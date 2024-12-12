@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class kontrolmenu {
     
@@ -13,7 +14,7 @@ public class kontrolmenu {
 
     public static void showViewVehiclesMenu() {
         System.out.println("\n-- Lihat Daftar Kendaraan --");
-        System.out.println("1. Lihat Semua Kendaraan");
+        System.out.println("1. Lihat Semua Kendaraan"); 
         System.out.println("2. Lihat Daftar Motor");
         System.out.println("3. Lihat Daftar Mobil");
         System.out.println("4. Cari Kendaraan");
@@ -76,15 +77,32 @@ public class kontrolmenu {
         }
     }
 
-    public static void showTransactionHistory(ArrayList<String> riwayatTransaksi, double totalPembelian) {
+    public static void showTransactionHistory(ArrayList<String> riwayatTransaksi, ArrayList<String> detailInvoice, double totalPembelian, Scanner scanner) {
         System.out.println("\n-- Riwayat Transaksi --");
         if (riwayatTransaksi.isEmpty()) {
             System.out.println("Belum ada transaksi.");
         } else {
-            for (String transaksi : riwayatTransaksi) {
-                System.out.println(transaksi);
+            for (int i = 0; i < riwayatTransaksi.size(); i++) {
+                System.out.println((i + 1) + ". " + riwayatTransaksi.get(i));
             }
             System.out.println("Total Pembelian: Rp" + totalPembelian);
+
+            System.out.println("\nLihat detail pembelian? (yes/no): ");
+            String pilihan = scanner.next();
+
+            if (pilihan.equalsIgnoreCase("yes")) {
+                System.out.print("Masukkan nomor riwayat: ");
+                int nomor = scanner.nextInt();
+                if (nomor > 0 && nomor <= detailInvoice.size()) {
+                    System.out.println(detailInvoice.get(nomor - 1));
+                } else {
+                    System.out.println("Nomor riwayat tidak valid.");
+                }
+            } else if (pilihan.equalsIgnoreCase("no")) {
+                System.out.println("Kembali ke menu utama.");
+            } else {
+                System.out.println("Pilihan tidak valid. Kembali ke menu utama.");
+            }
         }
     }
 }

@@ -1,3 +1,4 @@
+
 public class Motorcycle extends Vehicle {
     private int engineCC;
     private String category;
@@ -14,25 +15,9 @@ public class Motorcycle extends Vehicle {
         return engineCC;
     }
 
-    public void setEngineCC(int engineCC) {
-        if (engineCC <= 0) {
-            System.out.println("Kapasitas mesin harus lebih dari nol!");
-        } else {
-            this.engineCC = engineCC;
-        }
-    }
-
     public String getCategory() {
         return category;
     }
-
-public void setCategory(String category) {
-    if (!category.equalsIgnoreCase("Sport") && !category.equalsIgnoreCase("Cruiser") && !category.equalsIgnoreCase("Adventure")) {
-        System.out.println("Kategori motor tidak valid!");
-    } else {
-        this.category = category;
-    }
-}
 
     // Override toString to include Motorcycle-specific attributes
     @Override

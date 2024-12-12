@@ -14,24 +14,8 @@ public class Car extends Vehicle {
         return fuelType;
     }
 
-    public void setFuelType(String fuelType) {
-        if (!fuelType.equalsIgnoreCase("Bensin") && !fuelType.equalsIgnoreCase("Diesel") && !fuelType.equalsIgnoreCase("Electric")) {
-            System.out.println("Tipe bahan bakar tidak valid!");
-        } else {
-            this.fuelType = fuelType;
-        }
-    }
-
     public int getSeatingCapacity() {
         return seatingCapacity;
-    }
-
-    public void setSeatingCapacity(int seatingCapacity) {
-        if (seatingCapacity <= 0) {
-            System.out.println("Kapasitas tempat duduk harus lebih dari nol!");
-        } else {
-            this.seatingCapacity = seatingCapacity;
-        }
     }
 
     // Override toString to include Car-specific attributes

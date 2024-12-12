@@ -12,7 +12,7 @@ public class Vehicle {
         this.stockQuantity = stockQuantity;
     }
 
-    // Getter and Setter    
+    // Getter and Setter
     public String getBrand() {
         return brand;
     }
@@ -34,11 +34,7 @@ public class Vehicle {
     }
 
     public void setPrice(int price) {
-        if (price < 0) {
-            System.out.println("Harga tidak boleh negatif!");
-        } else {
-            this.price = price;
-        }
+        this.price = price;
     }
 
     public int getStockQuantity() {
@@ -46,11 +42,7 @@ public class Vehicle {
     }
 
     public void setStockQuantity(int stockQuantity) {
-        if (stockQuantity < 0) {
-            System.out.println("Stok tidak boleh negatif!");
-        } else {
-            this.stockQuantity = stockQuantity;
-        }
+        this.stockQuantity = stockQuantity;
     }
 
     // Display basic vehicle information

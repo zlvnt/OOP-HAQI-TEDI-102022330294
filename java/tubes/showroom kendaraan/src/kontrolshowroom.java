@@ -6,6 +6,7 @@ public class kontrolshowroom {
     private Scanner scanner;
     private ArrayList<Vehicle> vehicles;
     private ArrayList<String> riwayatTransaksi;
+    private ArrayList<String> detailInvoice;
     private double totalPembelian;
     private ArrayList<Customer> customers;
 
@@ -13,6 +14,7 @@ public class kontrolshowroom {
         this.scanner = scanner;
         this.vehicles = new ArrayList<>();
         this.riwayatTransaksi = new ArrayList<>();
+        this.detailInvoice = new ArrayList<>(); 
         this.totalPembelian = 0;
         this.customers = new ArrayList<>();
 
@@ -138,7 +140,6 @@ public class kontrolshowroom {
                 Customer customer = findCustomerByName(customerName);
 
                 if (customer == null) {
-                    System.out.println("Pelanggan tidak ditemukan. Menambahkan pelanggan baru...");
                     customer = new Customer(customerName);
                     customers.add(customer);
                 }
@@ -165,18 +166,20 @@ public class kontrolshowroom {
     }
 
     private void generateInvoice(Customer customer, Vehicle vehicle, int quantity, double total, double nominalPembayaran, double kembalian) {
-        System.out.println("\n========Invoice Pembelian========");
-        System.out.println("Nama Pelanggan   : " + customer.getName());
-        System.out.println("Kendaraan        : " + vehicle.getBrand() + " " + vehicle.getModel());
-        System.out.println("Harga per Unit   : Rp" + vehicle.getPrice());
-        System.out.println("Jumlah Unit      : " + quantity);
-        System.out.println("Total Harga      : Rp" + total);
-        System.out.println("Nominal Dibayar  : Rp" + nominalPembayaran);
-        System.out.println("Kembalian        : Rp" + kembalian);
-        System.out.println("=================================");
+        String invoice = "\n========Invoice Pembelian========\n"
+        + "Nama Pelanggan   : " + customer.getName() + "\n"
+        + "Kendaraan        : " + vehicle.getBrand() + " " + vehicle.getModel() + "\n"
+        + "Harga per Unit   : Rp" + vehicle.getPrice() + "\n"
+        + "Jumlah Unit      : " + quantity + "\n"
+        + "Total Harga      : Rp" + total + "\n"
+        + "Nominal Dibayar  : Rp" + nominalPembayaran + "\n"
+        + "Kembalian        : Rp" + kembalian + "\n"
+        + "=================================";
+        System.out.println(invoice);
+        detailInvoice.add(invoice);
     }
     private void showTransactionHistory() {
-    kontrolmenu.showTransactionHistory(riwayatTransaksi, totalPembelian);
+        kontrolmenu.showTransactionHistory(riwayatTransaksi, detailInvoice,totalPembelian, scanner);
     }
 
     private Customer findCustomerByName(String name) {
